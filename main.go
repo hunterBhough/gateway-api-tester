@@ -16,45 +16,52 @@ func main() {
 	relatedLists, err := buildRelatedLists()
 
 	if err != nil {
+		fmt.Println("The master list failed to build. The error is below ")
 		fmt.Println(err)
 	} else {
-		err = runLists(relatedLists)
-		if err != nil {
-			fmt.Println(err)
+		errs := runLists(relatedLists)
+		if len(errs) > 0 {
+			for _, err := range errs {
+				fmt.Println(err)
+			}
 		} else {
 			fmt.Println("API is passing all tests")
 		}
 	}
-
 }
 
-func runLists(relatedLists models.ListOfLists) error {
+func runLists(relatedLists models.ListOfLists) []error {
+	var errorList []error
 	for _, list := range relatedLists.Lists {
 		switch list.RelatedListType {
 		case "RCL":
 			contactList, err := buildContactList(list.RSID)
 			if err != nil {
-				return err
+				errorList = append(errorList, errors.New("the following error occurred on RSID " + strconv.Itoa(list.RSID)))
+				errorList = append(errorList, err)
 			}
 			err = compare(list.RSID, list.RelatedListType, list.ResourcesTitle, contactList.LISTCONFIGURATION.RELATEDLISTTYPE, contactList.LISTCONFIGURATION.RESOURCESTITLE)
 			if err != nil {
-				return err
+				errorList = append(errorList, errors.New("the following error occurred on RSID " + strconv.Itoa(list.RSID)))
+				errorList = append(errorList, err)
 			}
 		case "ROL":
 			orgList, err := buildOrgList(list.RSID)
 			if err != nil {
-				return err
+				errorList = append(errorList, errors.New("the following error occurred on RSID " + strconv.Itoa(list.RSID)))
+				errorList = append(errorList, err)
 			}
 			err = compare(list.RSID, list.RelatedListType, list.ResourcesTitle, orgList.LISTCONFIGURATION.RELATEDLISTTYPE, orgList.LISTCONFIGURATION.RESOURCESTITLE)
 			if err != nil {
-				return err
+				errorList = append(errorList, errors.New("the following error occurred on RSID " + strconv.Itoa(list.RSID)))
+				errorList = append(errorList, err)
 			}
 		default:
-			err := errors.New("could not determine list type")
-			return err
+			err := errors.New("could not determine list type for RSID " + strconv.Itoa(list.RSID))
+			errorList = append(errorList, err)
 		}
 	}
-	return nil
+	return errorList
 }
 
 func compare(id int, relatedListType string, relatedListTitle string, listType string, listTitle string) error {

@@ -30,7 +30,7 @@ type RolList struct {
 	LISTITEMS []struct {
 		ACRONYM  string `json:"ACRONYM"`
 		ADDRESS1 string `json:"ADDRESS1"`
-		//ADDRESS2 string `json:"ADDRESS2"`
+		ADDRESS2 string `json:"ADDRESS2"`
 		ADDRESS3 string `json:"ADDRESS3"`
 		ADDRESS4 string `json:"ADDRESS4"`
 		AGENCYTYPES []struct {
