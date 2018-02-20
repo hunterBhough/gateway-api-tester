@@ -3,7 +3,7 @@ package models
 type RclList struct {
 	INITIALEXECUTIONTIME string `json:"INITIALEXECUTIONTIME"`
 	LISTCONFIGURATION struct {
-		//CONTACTROLES          int    `json:"CONTACTROLES"`
+		CONTACTROLES          int    `json:"CONTACTROLES"`
 		DEFAULTGROUPBY        int    `json:"DEFAULTGROUPBY"`
 		DEFAULTORDERBY        string `json:"DEFAULTORDERBY"`
 		ISDISPLAYAGENCYTYPES  int    `json:"ISDISPLAYAGENCYTYPES"`
@@ -19,7 +19,7 @@ type RclList struct {
 		RESOURCESDESCR        string `json:"RESOURCES_DESCR"`
 		RESOURCESTITLE        string `json:"RESOURCES_TITLE"`
 		ROLORGLEVEL           string `json:"ROLORGLEVEL"`
-		//ROLPAGESECTION        string `json:"ROLPAGESECTION"`
+		ROLPAGESECTION        string `json:"ROLPAGESECTION"`
 		RSID                  int    `json:"RS_ID"`
 		STDDISPLAYDESCRIPTION string `json:"STDDISPLAYDESCRIPTION"`
 		STDDISPLAYID          int    `json:"STDDISPLAYID"`
@@ -35,7 +35,7 @@ type RclList struct {
 		CONCITY     string `json:"CONCITY"`
 		CONEMAIL    string `json:"CONEMAIL"`
 		CONSTATE    string `json:"CONSTATE"`
-		//CONTACTID   int    `json:"CONTACTID"`
+		CONTACTID   int    `json:"CONTACTID"`
 		CONTACTROLES []struct {
 			CONTACTROLE     string `json:"CONTACTROLE"`
 			CONTACTROLEDESC string `json:"CONTACTROLEDESC"`
@@ -44,7 +44,7 @@ type RclList struct {
 			ISDELETED       int    `json:"ISDELETED"`
 			ISNFCAD         int    `json:"ISNFCAD"`
 		} `json:"CONTACTROLES"`
-		//CONZIP                                    string `json:"CONZIP"`
+		CONZIP                                    string `json:"CONZIP"`
 		DSPSIMPLEHTMLVIEW                         string `json:"DSPSIMPLEHTMLVIEW"`
 		DSPSTANDARDHTMLVIEW                       string `json:"DSPSTANDARDHTMLVIEW"`
 		FIRSTNAME                                 string `json:"FIRST_NAME"`
@@ -52,11 +52,11 @@ type RclList struct {
 		GETROLORGSIMPLECONTACTINFODISPLAY         string `json:"GETROLORGSIMPLECONTACTINFODISPLAY"`
 		GETROLORGSIMPLEWITHUSERCONTACTINFODISPLAY string `json:"GETROLORGSIMPLEWITHUSERCONTACTINFODISPLAY"`
 		LASTNAME                                  string `json:"LAST_NAME"`
-		//NADID                                     int    `json:"NADID"`
+		NADID                                     int    `json:"NADID"`
 		ORG struct {
 			ACRONYM                string  `json:"ACRONYM"`
 			ADDRESS1               string  `json:"ADDRESS1"`
-			//ADDRESS2               string  `json:"ADDRESS2"`
+			ADDRESS2               string  `json:"ADDRESS2"`
 			ADDRESS3               string  `json:"ADDRESS3"`
 			ADDRESS4               string  `json:"ADDRESS4"`
 			CITY                   string  `json:"CITY"`
@@ -68,7 +68,7 @@ type RclList struct {
 			LATITUDE               float64 `json:"LATITUDE"`
 			LOCALCHAPURL           string  `json:"LOCALCHAPURL"`
 			LONGITUDE              float64 `json:"LONGITUDE"`
-			//NADID                  int     `json:"NADID"`
+			NADID                  int     `json:"NADID"`
 			NOTES                  string  `json:"NOTES"`
 			ORGNAME1               string  `json:"ORGNAME1"`
 			ORGNAME2               string  `json:"ORGNAME2"`
@@ -79,7 +79,7 @@ type RclList struct {
 			WEBURL                 string  `json:"WEBURL"`
 			WEBURLSPANISH          string  `json:"WEBURLSPANISH"`
 			YOUTUBEURL             string  `json:"YOUTUBEURL"`
-			//ZIP                    string  `json:"ZIP"`
+			ZIP                    string  `json:"ZIP"`
 		} `json:"ORG"`
 		PHONENUMBERS []struct {
 			DISPLAYSORTORDER int    `json:"DISPLAYSORTORDER"`
@@ -87,7 +87,7 @@ type RclList struct {
 			PHONETYPEID      int    `json:"PHONETYPEID"`
 			TYPENUM          string `json:"TYPENUM"`
 		} `json:"PHONENUMBERS"`
-		//PRIMARYCONTACT                  int    `json:"PRIMARY_CONTACT"`
+		PRIMARYCONTACT                  int    `json:"PRIMARY_CONTACT"`
 		RETURNCOMDISPLAYLISTITEMSSIMPLE string `json:"RETURNCOMDISPLAYLISTITEMSSIMPLE"`
 		STATE                           string `json:"STATE"`
 		TITLE                           string `json:"TITLE"`

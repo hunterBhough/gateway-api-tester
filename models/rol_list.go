@@ -19,7 +19,7 @@ type RolList struct {
 		RESOURCESDESCR        string `json:"RESOURCES_DESCR"`
 		RESOURCESTITLE        string `json:"RESOURCES_TITLE"`
 		ROLORGLEVEL           string `json:"ROLORGLEVEL"`
-		//ROLPAGESECTION        int    `json:"ROLPAGESECTION"`
+		ROLPAGESECTION        int    `json:"ROLPAGESECTION"`
 		RSID                  int    `json:"RS_ID"`
 		STDDISPLAYDESCRIPTION string `json:"STDDISPLAYDESCRIPTION"`
 		STDDISPLAYID          int    `json:"STDDISPLAYID"`
@@ -50,15 +50,15 @@ type RolList struct {
 			CONCITY         string        `json:"CONCITY"`
 			CONEMAIL        string        `json:"CONEMAIL"`
 			CONSTATE        string        `json:"CONSTATE"`
-			//CONTACTID       int           `json:"CONTACTID"`
-			//CONTACTROLES    []interface{} `json:"CONTACTROLES"`
-			//CONZIP          string        `json:"CONZIP"`
+			CONTACTID       int           `json:"CONTACTID"`
+			CONTACTROLES    []interface{} `json:"CONTACTROLES"`
+			CONZIP          string        `json:"CONZIP"`
 			FIRSTNAME       string        `json:"FIRST_NAME"`
 			FUNCTIONALTITLE string        `json:"FUNCTIONALTITLE"`
 			LASTNAME        string        `json:"LAST_NAME"`
-			//NADID           int           `json:"NADID"`
+			NADID           int           `json:"NADID"`
 			PHONENUMBERS    []interface{} `json:"PHONENUMBERS"`
-			//PRIMARYCONTACT  int           `json:"PRIMARY_CONTACT"`
+			PRIMARYCONTACT  int           `json:"PRIMARY_CONTACT"`
 			STATE           string        `json:"STATE"`
 			TITLE           string        `json:"TITLE"`
 		} `json:"CONTACTS"`
@@ -80,7 +80,7 @@ type RolList struct {
 		LATITUDE     float64 `json:"LATITUDE"`
 		LOCALCHAPURL string  `json:"LOCALCHAPURL"`
 		LONGITUDE    float64 `json:"LONGITUDE"`
-		//NADID        int     `json:"NADID"`
+		NADID        int     `json:"NADID"`
 		NOTES        string  `json:"NOTES"`
 		ORGNAME1     string  `json:"ORGNAME1"`
 		ORGNAME2     string  `json:"ORGNAME2"`
@@ -98,6 +98,6 @@ type RolList struct {
 		WEBURL                          string        `json:"WEBURL"`
 		WEBURLSPANISH                   string        `json:"WEBURLSPANISH"`
 		YOUTUBEURL                      string        `json:"YOUTUBEURL"`
-		//ZIP                             int           `json:"ZIP"`
+		ZIP                             int           `json:"ZIP"`
 	} `json:"LISTITEMS"`
 }
