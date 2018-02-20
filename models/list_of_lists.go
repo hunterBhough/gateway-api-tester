@@ -18,6 +18,7 @@ type ListOfLists struct {
 		ResourcesTitle       string `json:"RESOURCES_TITLE"`
 		RolOrgLevel          string `json:"ROLORGLEVEL"`
 		RSID                 int    `json:"RS_ID"`
+		//ROLPAGESECTION        int    `json:"ROLPAGESECTION"`
 		StdDisplayViews      int    `json:"STD_DISPLAY_VIEWS"`
 	} `json:"LISTS"`
 	Time string `json:"TIME"`
